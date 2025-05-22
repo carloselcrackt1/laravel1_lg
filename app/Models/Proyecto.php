@@ -9,5 +9,5 @@ class Proyecto extends Model
 {
     use HasFactory;
     
-    protected $filable=["Titulo","Descripcion"];
+    protected $fillable=["Titulo","Decripcion"];
 }

@@ -23,7 +23,7 @@ class ProyectosController extends Controller
      */
     public function create()
     {
-        //
+        return view("projects/new");
     }
 
     /**
@@ -31,7 +31,9 @@ class ProyectosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Proyecto::create($request->all());
+        return redirect("project/")
+            ->with("success","proyecto creado satisfactoriamente");
     }
 
     /**
@@ -45,9 +47,10 @@ class ProyectosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Proyecto $proyecto)
+    public function edit($id)
     {
-        //
+        $proyecto=Proyecto::find($id);
+        return view("projects/update",compact('proyecto'));
     }
 
     /**

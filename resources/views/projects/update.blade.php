@@ -51,18 +51,17 @@
 
         <div class="row">
             <div class="col-9 bg-dark text-white">
-                <form action="{{route('project.store')}}" method="post">
+                <form action="{{route('project.update',$proyecto ->id)}}" method="post">
                     @csrf
-                    @method('POST')
-
+                    @method('PUT')
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="inputGroup-sizing-default">Título</span>
-                        <input type="text" name="Titulo" id="Titulo" class="form-control" aria-label="Sizing example input">
+                        <input type="text" name="Titulo" id="Titulo" class="form-control" value= "{{$proyecto ->Titulo}}" aria-label="Sizing example input">
                     </div>
 
                     <div class="input-group">
                         <span class="input-group-text">Descripción</span>
-                        <textarea name="descripcion" id="Decripcion" class="form-control" aria-label="With textarea"></textarea>
+                        <textarea name="descripcion" id="Decripcion" class="form-control" aria-label="With textarea">{{$proyecto->Decripcion}}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Guardar</button>
