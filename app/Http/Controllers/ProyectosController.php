@@ -56,16 +56,20 @@ class ProyectosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Proyecto $proyecto)
+    public function update(Request $request, $id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+        $proyecto->update($request->all());
+        return redirect('project/')->with('success','Proyecto actualizado correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Proyecto $proyecto)
+    public function destroy($id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+        $proyecto->delete();
+        return redirect('project/')->with('success','Proyecto eliminado correcto correctamente');
     }
 }

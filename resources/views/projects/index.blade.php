@@ -71,6 +71,13 @@
                             <th>{{$proyecto->Decripcion}}</th>  
                             <th>{{$proyecto->created_at}}</th>
                             <td>
+                            <form action="{{ route('project.destroy', $proyecto->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Borrar</button>
+                            </form>
+                            </td>
+                            <td>
                             </td>
                             <td>
                             </td>

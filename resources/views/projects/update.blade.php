@@ -61,7 +61,7 @@
 
                     <div class="input-group">
                         <span class="input-group-text">Descripción</span>
-                        <textarea name="descripcion" id="Decripcion" class="form-control" aria-label="With textarea">{{$proyecto->Decripcion}}</textarea>
+                        <textarea name="Decripcion" id="Decripcion" class="form-control" aria-label="With textarea">{{$proyecto->Decripcion}}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Guardar</button>
